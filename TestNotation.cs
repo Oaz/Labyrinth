@@ -13,6 +13,7 @@ namespace Labyrinth.Tests
 			Assert.That( new Block { Closed = Walls.Nothing }.ToString(), Is.EqualTo("   ") );
 			Assert.That( new Block { Closed = Walls.Left }.ToString(),    Is.EqualTo("(  ") );
 			Assert.That( new Block { Closed = Walls.Right }.ToString(),   Is.EqualTo("  )") );
+			Assert.That( new Block { Closed = Walls.Bottom }.ToString(),  Is.EqualTo(" _ ") );
 		}
   }
 }
