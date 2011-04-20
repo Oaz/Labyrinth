@@ -36,7 +36,9 @@ namespace Labyrinth.Tests
     public void FromSimpleNotation()
     {
       Assert.That( Block.From("   "), Is.EqualTo(new Block { Closed = Walls.Nothing }) );
+
       Assert.That( Block.From("(  "), Is.EqualTo(new Block { Closed = Walls.Left }) );
+      Assert.That( Block.From("  )"), Is.EqualTo(new Block { Closed = Walls.Right }) );
     }
   }
 }
