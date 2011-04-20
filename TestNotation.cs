@@ -44,6 +44,17 @@ namespace Labyrinth.Tests
 
       Assert.That( Block.From(" O "), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Bottom }) );
       Assert.That( Block.From("(^ "), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Left }) );
+      Assert.That( Block.From(" ^)"), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Right }) );
+      Assert.That( Block.From("(_ "), Is.EqualTo(new Block { Closed = Walls.Bottom + Walls.Left }) );
+      Assert.That( Block.From(" _)"), Is.EqualTo(new Block { Closed = Walls.Bottom + Walls.Right }) );
+      Assert.That( Block.From("( )"), Is.EqualTo(new Block { Closed = Walls.Left + Walls.Right }) );
+
+      Assert.That( Block.From("(O "), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Bottom + Walls.Left }) );
+      Assert.That( Block.From(" O)"), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Bottom + Walls.Right }) );
+      Assert.That( Block.From("(^)"), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Left + Walls.Right }) );
+      Assert.That( Block.From("(_)"), Is.EqualTo(new Block { Closed = Walls.Bottom + Walls.Left + Walls.Right }) );
+
+      Assert.That( Block.From("(O)"), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Bottom + Walls.Left + Walls.Right }) );
     }
   }
 }
