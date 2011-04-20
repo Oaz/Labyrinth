@@ -112,6 +112,33 @@ namespace Labyrinth.Tests
       Assert.That( labyrinth[1,1], Is.EqualTo(Block.From(" _ ")) );
       Assert.That( labyrinth[2,1], Is.EqualTo(Block.From(" _)")) );
     }
+
+    [Test]
+    public void LabyrinthFromSimpleNotationSize5x3()
+    {
+      var labyrinth = Labyrinth.From(@"
+(^).(O . ^).(^ . ^)
+(  . O .  ).(_).( )
+(_ . O). _ . O . _) 
+");
+      Assert.That( labyrinth.Width, Is.EqualTo(5) );
+      Assert.That( labyrinth.Height, Is.EqualTo(3) );
+      Assert.That( labyrinth[0,0], Is.EqualTo(Block.From("(^)")) );
+      Assert.That( labyrinth[1,0], Is.EqualTo(Block.From("(O ")) );
+      Assert.That( labyrinth[2,0], Is.EqualTo(Block.From(" ^)")) );
+      Assert.That( labyrinth[3,0], Is.EqualTo(Block.From("(^ ")) );
+      Assert.That( labyrinth[4,0], Is.EqualTo(Block.From(" ^)")) );
+      Assert.That( labyrinth[0,1], Is.EqualTo(Block.From("(  ")) );
+      Assert.That( labyrinth[1,1], Is.EqualTo(Block.From(" O ")) );
+      Assert.That( labyrinth[2,1], Is.EqualTo(Block.From("  )")) );
+      Assert.That( labyrinth[3,1], Is.EqualTo(Block.From("(_)")) );
+      Assert.That( labyrinth[4,1], Is.EqualTo(Block.From("( )")) );
+      Assert.That( labyrinth[0,2], Is.EqualTo(Block.From("(_ ")) );
+      Assert.That( labyrinth[1,2], Is.EqualTo(Block.From(" O)")) );
+      Assert.That( labyrinth[2,2], Is.EqualTo(Block.From(" _ ")) );
+      Assert.That( labyrinth[3,2], Is.EqualTo(Block.From(" O ")) );
+      Assert.That( labyrinth[4,2], Is.EqualTo(Block.From(" _)")) );
+    }
   }
 }
 
