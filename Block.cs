@@ -28,7 +28,8 @@ namespace Labyrinth
     public override string ToString()
     {
        var char1 = (Closed == Walls.Left) ? "(" : " ";
-       return char1 + "  ";
+       var char3 = (Closed == Walls.Right) ? ")" : " ";
+       return char1 + " " + char3;
     }
 	}
 }

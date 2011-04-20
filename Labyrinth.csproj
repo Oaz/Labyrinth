@@ -2,7 +2,7 @@
 <Project DefaultTargets="BuildAndTest" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>    <OutputType>Library</OutputType>    <AssemblyName>Labyrinth</AssemblyName>    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>  </PropertyGroup>  <ItemGroup>    <Reference Include="System" />    <Reference Include="nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />    <Reference Include="System.Core" />  </ItemGroup>  <ItemGroup>
     <Compile Include="Block.cs" />
-    <Compile Include="TestDisplay.cs" />
+    <Compile Include="TestNotation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Test">
