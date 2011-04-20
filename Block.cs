@@ -29,7 +29,8 @@ namespace Labyrinth
         blockDefinition[0] == '(' ? Walls.Left : Walls.Nothing
         + blockDefinition[2] == ')' ? Walls.Right : Walls.Nothing
         + blockDefinition[1] == '_' ? Walls.Bottom : Walls.Nothing
-        + blockDefinition[1] == '^' ? Walls.Top : Walls.Nothing;
+        + blockDefinition[1] == '^' ? Walls.Top : Walls.Nothing
+        + blockDefinition[1] == 'O' ? Walls.Top + Walls.Bottom : Walls.Nothing;
       return new Block { Closed = closed };
     }
 
