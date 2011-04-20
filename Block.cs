@@ -31,7 +31,9 @@ namespace Labyrinth
         + (blockDefinition[1] == '_' ? Walls.Bottom : Walls.Nothing)
         + (blockDefinition[1] == '^' ? Walls.Top : Walls.Nothing)
         + (blockDefinition[1] == 'O' ? Walls.Top + Walls.Bottom : Walls.Nothing);
-      return new Block { Closed = closed };
+      var block = new Block { Closed = closed };
+      Tools.Assert<ArgumentException>( block.ToString() == blockDefinition, "Unexpected block definition {0}", blockDefinition );
+      return block;
     }
 
     public override bool Equals(object otherBlock)

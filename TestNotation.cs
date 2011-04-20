@@ -119,7 +119,7 @@ namespace Labyrinth.Tests
       var labyrinth = Labyrinth.From(@"
 (^).(O . ^).(^ . ^)
 (  . O .  ).(_).( )
-(_ . O). _ . O . _) 
+(_ . O). _ . O . _)
 ");
       Assert.That( labyrinth.Width, Is.EqualTo(5) );
       Assert.That( labyrinth.Height, Is.EqualTo(3) );
@@ -138,6 +138,38 @@ namespace Labyrinth.Tests
       Assert.That( labyrinth[2,2], Is.EqualTo(Block.From(" _ ")) );
       Assert.That( labyrinth[3,2], Is.EqualTo(Block.From(" O ")) );
       Assert.That( labyrinth[4,2], Is.EqualTo(Block.From(" _)")) );
+    }
+
+    [Test]
+    [ExpectedException( typeof(ArgumentException) )]
+    public void LabyrinthFromSimpleNotation_Error1()
+    {
+      var labyrinth = Labyrinth.From("xxx");
+    }
+
+    [Test]
+    [ExpectedException( typeof(ArgumentException) )]
+    public void LabyrinthFromSimpleNotation_Error2()
+    {
+      var labyrinth = Labyrinth.From("(O");
+    }
+
+    [Test]
+    [ExpectedException( typeof(ArgumentException) )]
+    public void LabyrinthFromSimpleNotation_Error3()
+    {
+      var labyrinth = Labyrinth.From("(^).(O");
+    }
+
+    [Test]
+    [ExpectedException( typeof(ArgumentException) )]
+    public void LabyrinthFromSimpleNotation_Error4()
+    {
+      var labyrinth = Labyrinth.From(@"
+(^).(O . ^).(^ . ^)
+(  . O .  ).(_).( 
+(_ . O). _ . O . _)
+");
     }
   }
 }
