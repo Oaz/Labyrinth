@@ -5,7 +5,7 @@ using NUnit.Framework.SyntaxHelpers;
 namespace Labyrinth.Tests
 {
   [TestFixture]
-  public class TestDisplay
+  public class TestNotation
   {
     [Test]
     public void ToSimpleNotation()
@@ -24,6 +24,11 @@ namespace Labyrinth.Tests
       Assert.That( new Block { Closed = Walls.Left + Walls.Right }.ToString(),     Is.EqualTo("( )") );
 
       Assert.That( new Block { Closed = Walls.Top + Walls.Bottom + Walls.Left }.ToString(),     Is.EqualTo("(O ") );
+      Assert.That( new Block { Closed = Walls.Top + Walls.Bottom + Walls.Right }.ToString(),    Is.EqualTo(" O)") );
+      Assert.That( new Block { Closed = Walls.Top + Walls.Left + Walls.Right }.ToString(),      Is.EqualTo("(^)") );
+      Assert.That( new Block { Closed = Walls.Bottom + Walls.Left + Walls.Right }.ToString(),   Is.EqualTo("(_)") );
+
+      Assert.That( new Block { Closed = Walls.Top + Walls.Bottom + Walls.Left + Walls.Right }.ToString(),   Is.EqualTo("(O)") );
     }
   }
 }
