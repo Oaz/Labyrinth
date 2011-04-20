@@ -95,6 +95,23 @@ namespace Labyrinth.Tests
       Assert.That( labyrinth[1,0], Is.EqualTo(Block.From(" O ")) );
       Assert.That( labyrinth[2,0], Is.EqualTo(Block.From(" O)")) );
     }
+
+    [Test]
+    public void LabyrinthFromSimpleNotationSize3x2()
+    {
+      var labyrinth = Labyrinth.From(@"
+(^ . ^ . ^)
+(_ . _ . _)
+");
+      Assert.That( labyrinth.Width, Is.EqualTo(3) );
+      Assert.That( labyrinth.Height, Is.EqualTo(2) );
+      Assert.That( labyrinth[0,0], Is.EqualTo(Block.From("(^ ")) );
+      Assert.That( labyrinth[1,0], Is.EqualTo(Block.From(" ^ ")) );
+      Assert.That( labyrinth[2,0], Is.EqualTo(Block.From(" ^)")) );
+      Assert.That( labyrinth[0,1], Is.EqualTo(Block.From("(_ ")) );
+      Assert.That( labyrinth[1,1], Is.EqualTo(Block.From(" _ ")) );
+      Assert.That( labyrinth[2,1], Is.EqualTo(Block.From(" _)")) );
+    }
   }
 }
 
