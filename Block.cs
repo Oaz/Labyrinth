@@ -25,7 +25,8 @@ namespace Labyrinth
 
     public static Block From(string blockDefinition)
     {
-      return new Block();
+      var closed = blockDefinition[0] == '(' ? Walls.Left : Walls.Nothing;
+      return new Block { Closed = closed };
     }
 
     public override bool Equals(object otherBlock)
