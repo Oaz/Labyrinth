@@ -8,7 +8,7 @@ namespace Labyrinth.Tests
   public class TestNotation
   {
     [Test]
-    public void ToSimpleNotation()
+    public void BlockToSimpleNotation()
     {
       Assert.That( new Block { Closed = Walls.Nothing }.ToString(),                Is.EqualTo("   ") );
 
@@ -33,7 +33,7 @@ namespace Labyrinth.Tests
     }
 
     [Test]
-    public void FromSimpleNotation()
+    public void BlockFromSimpleNotation()
     {
       Assert.That( Block.From("   "), Is.EqualTo(new Block { Closed = Walls.Nothing }) );
 
@@ -55,6 +55,15 @@ namespace Labyrinth.Tests
       Assert.That( Block.From("(_)"), Is.EqualTo(new Block { Closed = Walls.Bottom + Walls.Left + Walls.Right }) );
 
       Assert.That( Block.From("(O)"), Is.EqualTo(new Block { Closed = Walls.Top + Walls.Bottom + Walls.Left + Walls.Right }) );
+    }
+
+    [Test]
+    public void LabyrinthFromSimpleNotationSize1x1()
+    {
+      var labyrinth = Labyrinth.From("(O ");
+      Assert.That( labyrinth.Width, Is.EqualTo(1) );
+      Assert.That( labyrinth.Height, Is.EqualTo(1) );
+      Assert.That( labyrinth[0,0], Is.EqualTo(Block.From("(O ")) );
     }
   }
 }
