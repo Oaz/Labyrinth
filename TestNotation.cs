@@ -65,6 +65,15 @@ namespace Labyrinth.Tests
       Assert.That( labyrinth.Height, Is.EqualTo(1) );
       Assert.That( labyrinth[0,0], Is.EqualTo(Block.From("(O ")) );
     }
+
+    [Test]
+    public void LabyrinthFromSimpleNotationSize1x1_Bis()
+    {
+      var labyrinth = Labyrinth.From(" O)");
+      Assert.That( labyrinth.Width, Is.EqualTo(1) );
+      Assert.That( labyrinth.Height, Is.EqualTo(1) );
+      Assert.That( labyrinth[0,0], Is.EqualTo(Block.From(" O)")) );
+    }
   }
 }
 
