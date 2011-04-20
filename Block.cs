@@ -2,7 +2,7 @@ using System;
 
 namespace Labyrinth
 {
-	public class Walls
+  public class Walls
   {
     public const int Nothing = 0;
     public const int Top = 1;
@@ -19,8 +19,8 @@ namespace Labyrinth
     }
   }
 
-	public class Block
-	{
+  public class Block
+  {
     public int Closed { get; set; }
 
     public static Block From(string blockDefinition)
@@ -36,11 +36,11 @@ namespace Labyrinth
     public override string ToString()
     {
        var char1 = Closed.Has(Walls.Left) ? "(" : " ";
-       var char2 = (Closed == Walls.Top+Walls.Bottom) ? "O" : Closed.Has(Walls.Bottom) ? "_" : Closed.Has(Walls.Top) ? "^" : " ";
+       var char2 = Closed.Has(Walls.Top) && Closed.Has(Walls.Bottom) ? "O" : Closed.Has(Walls.Bottom) ? "_" : Closed.Has(Walls.Top) ? "^" : " ";
        var char3 = Closed.Has(Walls.Right) ? ")" : " ";
        return char1 + char2 + char3;
     }
-	}
+  }
 }
 
 
