@@ -1,0 +1,23 @@
+Explore impact of TDD of simultaneous development of 2 related transformations from a single datamodel
+
+I have a simple datamodel to represent a labyrinth : a 2D array of blocks ; each block has 4 sides ; wall on each side can be closed or not
+
+I want to display such a labyrinth using unicode blocks : ┏ ┓ ┗ ┛   ┳ ┫┣ ┻  ╋  ┃  ━  ╸╺╻╹
+
+I can use a small display :
+┏┳━┳━┓
+┃┗╸┃╻┃
+┃╺┓┗┛┃
+┗━┻━━┛
+
+Or I can use a large display :
+┏━┳━━┳━━━┓
+┃ ┃  ┃   ┃
+┃ ┗━ ┃ ╻ ┃
+┃    ┃ ┃ ┃
+┃ ━┓ ┗━┛ ┃
+┃  ┃     ┃
+┗━━┻━━━━━┛
+
+I want to experiment how the development of the 2 displays impact eaxh other
+
