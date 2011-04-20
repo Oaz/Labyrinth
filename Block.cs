@@ -36,7 +36,7 @@ namespace Labyrinth
     public override string ToString()
     {
        var char1 = Closed.Has(Walls.Left) ? "(" : " ";
-       var char2 = (Closed == Walls.Top+Walls.Bottom) ? "O" : (Closed == Walls.Bottom) ? "_" : Closed.Has(Walls.Top) ? "^" : " ";
+       var char2 = (Closed == Walls.Top+Walls.Bottom) ? "O" : Closed.Has(Walls.Bottom) ? "_" : Closed.Has(Walls.Top) ? "^" : " ";
        var char3 = Closed.Has(Walls.Right) ? ")" : " ";
        return char1 + char2 + char3;
     }
