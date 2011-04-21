@@ -25,12 +25,32 @@ namespace Labyrinth
       var rows = labyrinthDefinition.Split('\n').ToList().FindAll(row => row.Length > 0);
       var height = rows.Count;
       var width = (rows[0].Length+1)/4;
+
       Tools.Assert<ArgumentException>( (width*4-1)*height == rows.Select(row => row.Length).Sum(), "Unexpected labyrinth definition {0}", labyrinthDefinition );
+
       var blocks = new Block[width,height];
       for(var y = 0; y < height; y++)
         for(var x = 0; x < width; x++)
           blocks[x,y] = Block.From(rows[y].Substring(x*4,3));
+
       return new Labyrinth { Width = width, Height = height, _block = blocks };
+    }
+
+    public string ToSmallDisplay()
+    {
+      return @"
+┏┓
+┗┛
+";
+    }
+
+    public string ToLargeDisplay()
+    {
+      return @"
+┏━┓
+┃ ┃
+┗━┛
+";
     }
   }
 }

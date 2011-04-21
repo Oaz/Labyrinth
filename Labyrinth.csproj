@@ -5,6 +5,7 @@
     <Compile Include="Labyrinth.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="TestNotation.cs" />
+    <Compile Include="TestDisplay.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Test">
