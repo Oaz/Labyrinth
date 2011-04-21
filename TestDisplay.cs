@@ -17,6 +17,15 @@ namespace Labyrinth.Tests
     }
 
 		[Test]
+		public void Small_2x1()
+		{
+      Assert.That( Labyrinth.From("(O . O)").ToSmallDisplay(), Is.EqualTo(@"
+┏━┓
+┗━┛
+") );
+    }
+
+		[Test]
 		public void Large_1x1()
 		{
       Assert.That( Labyrinth.From("(O)").ToLargeDisplay(), Is.EqualTo(@"

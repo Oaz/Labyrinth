@@ -38,10 +38,10 @@ namespace Labyrinth
 
     public string ToSmallDisplay()
     {
-      return @"
-┏┓
-┗┛
-";
+      var sep = "\n";
+      var row0 = "┏" + (Width==2?"━":"") + "┓";
+      var row1 = "┗" + (Width==2?"━":"") + "┛";
+      return sep + row0 + sep + row1 + sep;
     }
 
     public string ToLargeDisplay()
